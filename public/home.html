@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>questionnaire</title>
+		<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
+		<style>
+			body {
+				background-color: #eee;
+			}
+
+			.main {
+				background-color: #fff;
+				margin: 0 auto;
+				width: 1000px;
+				box-sizing: border-box;
+				padding: 20px 40px;
+				border-radius: 10px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.top {
+				display: flex;
+				align-items: center;
+				justify-content: end;
+			}
+
+			.qa-box {
+				width: 100%;
+			}
+
+			.qa-item {
+				width: 100%;
+				border: 1px #ccc solid;
+				box-sizing: border-box;
+				padding: 10px 20px;
+				margin-top: 20px;
+				border-radius: 10px;
+			}
+
+			.qa-title {
+				font-size: 24px;
+				font-weight: bold;
+				margin-bottom: 10px;
+			}
+
+			.question span {
+				display: block;
+				margin-bottom: 10px;
+			}
+
+			.question .select {
+				display: flex;
+				align-items: center;
+			}
+
+			.question .select span {
+				margin-right: 20px;
+			}
+
+			.answer {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+			}
+
+			.answer span {
+				width: 177px;
+				margin-bottom: 10px;
+			}
+
+			input[type="text"] {
+				border-radius: 4px;
+				line-height: 24px;
+				outline: none;
+				border: 1px solid #ccc;
+				height: 32px;
+			}
+
+			.summarization {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				margin-top: 20px;
+			}
+
+			.summarization span {
+				display: block;
+				margin-bottom: 10px;
+				font-weight: bold;
+			}
+
+			#sendTransactionBtn {
+				margin: 0 auto;
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				margin-top: 10px;
+				border-radius: 4px;
+				border: 1px solid #ccc;
+				background-color: #fff;
+				cursor: pointer;
+				font-weight: bold;
+			}
+
+			#sendTransactionBtn:active {
+				background-color: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="top">
+				<span>Please connect to your wallet first👉</span>
+				<button id="connectWalletBtn">ConnectWallet</button>
+			</div>
+			<div class="qa-box">
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="a" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="b" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="c" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="d" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="e" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="f" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="g" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="h" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="i" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="j" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="k" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="l" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="m" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="n" placeholder="Type your answer here">
+					</div>
+				</div>
+				<div class="qa-item">
+					<div class="qa-title">question1</div>
+					<div class="question">
+						<span>
+							questionquestionquestionquestionquestionquestionquestionquestionquestionquestion
+						</span>
+						<div class="select">
+							<span>A.eee</span>
+							<span>B.eee</span>
+							<span>C.eee</span>
+						</div>
+					</div>
+					<div class="answer">
+						<span>Type your answer here</span>
+						<input type="text" id="o" placeholder="Type your answer here">
+					</div>
+				</div>
+			</div>
+			<div class="summarization">
+				<span>Answer summarization</span>
+				<input type="text" id="inputData" placeholder="Answer summarization" readonly>
+			</div>
+			<!-- <div>
+			  <label for="inputData">输入数据：</label>
+			  <input type="text" id="inputData" />
+			</div> -->
+			<button id="sendTransactionBtn">Submit</button>
+			<div class="summarization">
+				<span id="hash"></span>
+			</div>
+		</div>
+		<script>
+			// 当页面加载完成后执行初始化函数
+			window.addEventListener('load', init);
+			var walletConnect = false;
+			var contractAddress = '0xDc7b20dadf2573F9b8687a232A208f246bFd73EB';
+			// 初始化函数
+			async function init() {
+				// 检查用户是否安装了 Metamask
+				if (typeof web3 !== 'undefined') {
+					// 使用已存在的提供商
+					web3 = new Web3(web3.currentProvider);
+				} else {
+					// 提示用户安装 Metamask
+					alert('请安装并登录 Metamask');
+					return;
+				}
+
+				// 添加连接钱包按钮的点击事件处理程序
+				const connectWalletBtn = document.getElementById('connectWalletBtn');
+				connectWalletBtn.addEventListener('click', connectWallet);
+
+				// 添加数据上链按钮的点击事件处理程序
+				const sendTransactionBtn = document.getElementById('sendTransactionBtn');
+				sendTransactionBtn.addEventListener('click', sendTransaction);
+			}
+
+			// 连接钱包
+			async function connectWallet() {
+				try {
+					// 请求连接钱包
+					await ethereum.request({
+						method: 'eth_requestAccounts'
+					});
+					walletConnect = true
+					
+					
+					console.log('已连接钱包');
+					console.log(walletConnect);
+					alert('已连接钱包')
+				} catch (error) {
+					console.error('连接钱包出错:', error);
+				}
+			}
+
+			document.addEventListener('DOMContentLoaded', function() {
+				// 监听从a到o的每个输入框的变化
+				var inputIds = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o'];
+				for (var i = 0; i < inputIds.length; i++) {
+					document.getElementById(inputIds[i]).addEventListener('input', processInputs);
+				}
+			});
+
+			function processInputs() {
+				// 获取从a到o的所有输入框的值
+				var values = [];
+				var inputIds = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o'];
+				for (var i = 0; i < inputIds.length; i++) {
+					var value = document.getElementById(inputIds[i]).value;
+					if (value.trim() !== '') {
+						values.push(value);
+					}
+				}
+
+				// 将值用逗号连接
+				var combinedValue = values.join(',');
+
+				// 将处理后的字符串赋值给inputData
+				document.getElementById('inputData').value = combinedValue;
+			}
+
+
+
+			// 数据上链
+			async function sendTransaction() {
+				// 获取用户输入的数据
+				const inputData = document.getElementById('inputData').value;
+        console.log(inputData)
+				try {
+					// 获取当前连接的账户
+					const accounts = await ethereum.request({
+						method: 'eth_accounts'
+					});
+					const from = accounts[0]; // 使用第一个账户
+
+					// 构建交易对象
+					const txObject = {
+						from: from,
+						to: '0x0000000000000000000000000000000000000000',
+						value: 0,
+						data: web3.utils.asciiToHex(inputData),
+					};
+
+					// 发送交易
+					const txHash = await ethereum.request({
+						method: 'eth_sendTransaction',
+						params: [txObject],
+					});
+
+					console.log('交易哈希:', txHash);
+					document.getElementById('hash').innerHTML = 'Your Hash:' + txHash;
+					alert('Your content has been successfully recorded and an NFT has given you as reward')
+					
+						
+					generateNFT()
+				} catch (error) {
+					console.error('发送交易出错:', error);
+				}
+			}
+			
+			function getRandomInt(min, max) {
+			    min = Math.ceil(min);
+			    max = Math.floor(max);
+			    return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+			function generateNFT() {
+
+				if (!walletConnect) {
+					alert('Please connect your wallet first!');
+					return;
+				}
+
+
+				var to = window.ethereum.selectedAddress;
+				var tokenId = getRandomInt(1000, 9999);
+				var uri = 'ipfs://QmTNWS6r3iNN57NSFqfiNZ2WLSGDK6eHY6xzu5vV97hsfN';
+				web3 = new Web3();
+
+				const data = web3.eth.abi.encodeFunctionCall({
+					name: 'safeMint',
+					type: 'function',
+					inputs: [{
+							type: 'address',
+							name: 'to'
+						},
+						// {
+						//     type: 'uint256',
+						//     name: 'tokenId'
+						// },
+						{
+							type: 'string',
+							name: 'uri'
+						}
+					]
+				}, [to, uri]);
+
+				// Call the Sepolia smart contract
+				window.ethereum.request({
+					method: 'eth_sendTransaction',
+					params: [{
+						to: contractAddress,
+						from: window.ethereum.selectedAddress,
+						data: data, // Function signature for the safeMint method
+					}],
+				}).then(function(accounts) {
+					alert('wait NFT generated');
+				}).catch(function(error) {
+					alert('Error generating NFT. Please try again.');
+				});
+
+			}
+		</script>
+	</body>
+</html>

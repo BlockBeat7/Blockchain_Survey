@@ -1,0 +1,128 @@
+// import dark theme
+@use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
+
+// :root {
+//   --ep-color-primary: red;
+// }
+
+body {
+  font-family: Inter, system-ui, Avenir, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+a {
+  color: var(--ep-color-primary);
+}
+
+code {
+  border-radius: 2px;
+  padding: 2px 4px;
+  background-color: var(--ep-color-primary-light-9);
+  color: var(--ep-color-primary);
+}
+body {
+  background-color: #eee;
+}
+
+.main {
+  background-color: #fff;
+  margin: 0 auto;
+  max-width: 1000px;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.qa-box {
+  width: 100%;
+}
+
+.qa-item {
+  width: 100%;
+  border: 1px #ccc solid;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.qa-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.question span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.question .select {
+  display: flex;
+  align-items: center;
+}
+
+.question .select span {
+  margin-right: 20px;
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.answer span {
+  width: 177px;
+  margin-bottom: 10px;
+}
+
+// input[type="text"] {
+//   border-radius: 4px;
+//   line-height: 24px;
+//   outline: none;
+//   border: 1px solid #ccc;
+//   height: 32px;
+// }
+
+.summarization {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.summarization span {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#sendTransactionBtn {
+  margin: 0 auto;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#sendTransactionBtn:active {
+  background-color: #ccc;
+}
